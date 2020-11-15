@@ -1,63 +1,22 @@
-@extends('layouts.header')
+@extends('layouts.app')
 
 @section('content')
 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 <div class="container mt-4">
     <div class="row">
         <div class="col-md-3">
             <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
-            <table id="myTable">
+            <table id="myTable" class="table-bordered">
                 <tr class="header">
-                <th style="width:60%;">Top Vendor Included</th>
+                    <th style="width:60%;">Top Vendor Included</th>
                 </tr>
+                @foreach($vendors as $vendor)
                 <tr>
-                <td>Cisco</td>
-                
+                    <td><a href="vendors/{{$vendor->id}}">{{$vendor->name}}</a></td>
                 </tr>
-                <tr>
-                <td>Microsoft</td>
-                
-                </tr>
-                <tr>
-                <td>Amazon</td>
-                
-                </tr>
-                <tr>
-                <td>CompTIA</td>
-                
-                </tr>
-                <tr>
-                <td>Juniper</td>
-                
-                </tr>
-                <tr>
-                <td>VMware</td>
-            
-                </tr>
-                <tr>
-                <td>Oracle</td>
-                
-                </tr>
-                <tr>
-                <td>PMP</td>
-                
-                </tr>
-                <tr>
-                <td>RedHat</td>
-                
-                </tr>
-                <tr>
-                <td>ITIL</td>
-                
-                </tr>
-                <tr>
-                <td>ECCouncil</td>
-                
-                </tr>
+                @endforeach
                 <tr class="footer">
-                <th style="width:60%;">View All Vendors</th>
-            
+                    <th style="width:60%;"><a href="{{ route('all.products') }}">View All Vendors</a></th>
                 </tr>
             </table>
         </div>
@@ -85,77 +44,13 @@
                     <button type="button" class="btn btn-primary">Buy Now</button>
                 </div>
             </div>
-            <div class="row mt-5 mb-5">  
-                    <div class="col-md-12">
-                        <table id="myTable" class="table table-sm">
-                        <tr class="header">
-                            <th style="width:60%;">Cisco</th>
-                        </tr>
-                        <tr>
-                            <td>CCNP Routing and Switching</td>
-                            
-                        </tr>
-                        <tr>
-                            <td>Cisco CCIE Security Exams</td>
-                            
-                        </tr>
-                        <tr>
-                            <td>CCNA</td>
-                        
-                        </tr>
-                        <tr>
-                            <td>CCNP</td>
-                            
-                        </tr>
-                        <tr>
-                            <td>CCNA Security</td>
-                            
-                        </tr>
-                        <tr>
-                            <td>CCNA Cloud</td>
-                        
-                        </tr>       
-                        </table>
-                        </div>
-                        </div>
-                        </div>
-                    </div>
-            </div>
-<style>
+            <br>
+            <h4 style="color:#333399;background: #f5f5f5;padding: 10px;font-size: 16px;font-weight: bold;border: 1px solid #e5e5e5;margin-bottom: 10px;margin-top: 0;text-transform: uppercase; text-align: center;">Included Vendors and Certifications</h4>
 
-    #myInput {
-        background-image: url('/css/searchicon.png');
-        background-position: 5px 5px;
-        background-repeat: no-repeat;
-        width: 100%;
-        font-size: 16px;
-        padding: 12px 20px 12px 40px;
-        border: 1px solid #eef5f9 ;
-        margin-bottom: 12px;
-    }
-
-    #myTable {
-        border-collapse: collapse;
-        width: 100%;
-        border: 1px solid #eef5f9 ;
-        font-size: 18px;
-    }
-
-    #myTable th, #myTable td {
-        text-align: left;
-        padding: 6px;
-    }
-
-    #myTable tr {
-    border-bottom: 1px solid #eef5f9 ;
-    }
-
-    #myTable tr.header, #myTable tr:hover {
-    background-color: #eef5f9 ;
-    }
-
-    #myTable tr.footer, #myTable tr:hover {
-    background-color: #eef5f9 ;
-    }
-</style>
+            @livewire('certificationfilter')
+            
+        </div>
+    </div>
+</div>
+            
 @endsection

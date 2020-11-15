@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Certification;
 use Illuminate\Http\Request;
 use App\Vendor;
+use App\Exam;
 
 class PagesController extends Controller
 {
@@ -33,11 +35,18 @@ class PagesController extends Controller
     }
 
     public function exam($id){
-        return view('single-exam');
+        $exam = Exam::where('id', $id)->first();
+        // dd($exam);
+        return view('single-exam')->with(compact('exam'));
     }
 
+    public function vendor($id){
+        $vv = Vendor::whereId($id)->first();
+        $certifications = Certification::where('vendor_id', $id)->get();
+        return view('single-vendor')->with(compact('vv','certifications'));
+    }
     //Admin Pages
-    public function vendors(){
+    public function allvendors(){
         return view('admin.vendors.all-vendors');
     }
     public function certifications(){

@@ -1,4 +1,4 @@
-@extends('layouts.header')
+@extends('layouts.app')
 
 @section('content')
 
@@ -8,60 +8,20 @@
             <input type="text" id="myInput" placeholder="Search for names.." title="Type in a name">
             <table id="myTable">
                 <tr class="header">
-                <th style="width:60%;">Top Vendor Included</th>
+                    <th style="width:60%;">Top Vendor Included</th>
                 </tr>
+                @foreach($vendors as $vendor)
                 <tr>
-                <td>Cisco</td>
-                
+                    <td><a href="/vendors/{{$vendor->id}}">{{$vendor->name}}</a></td>
                 </tr>
-                <tr>
-                <td>Microsoft</td>
-                
-                </tr>
-                <tr>
-                <td>Amazon</td>
-                
-                </tr>
-                <tr>
-                <td>CompTIA</td>
-                
-                </tr>
-                <tr>
-                <td>Juniper</td>
-                
-                </tr>
-                <tr>
-                <td>VMware</td>
-            
-                </tr>
-                <tr>
-                <td>Oracle</td>
-                
-                </tr>
-                <tr>
-                <td>PMP</td>
-                
-                </tr>
-                <tr>
-                <td>RedHat</td>
-                
-                </tr>
-                <tr>
-                <td>ITIL</td>
-                
-                </tr>
-                <tr>
-                <td>ECCouncil</td>
-                
-                </tr>
+                @endforeach
                 <tr class="footer">
-                <th style="width:60%;">View All Vendors</th>
-            
+                    <th style="width:60%;"><a href="{{ route('all.products') }}">View All Vendors</a></th>
                 </tr>
             </table>
         </div>
         <div class="col-md-9">
-            <h4 style="color:#333399;background: #f5f5f5;padding: 10px;font-size: 16px;font-weight: bold;border: 1px solid #e5e5e5;margin-bottom: 10px;margin-top: 0;text-transform: uppercase;">Unlimited Life Time Access Pack</h4>
+            <h4 style="color:#333399;background: #f5f5f5;padding: 10px;font-size: 16px;font-weight: bold;border: 1px solid #e5e5e5;margin-bottom: 10px;margin-top: 0;text-transform: uppercase;">{{$exam->exam_title}}</h4>
             <div class="row">
                 <div class="col-md-6">
                 <img src="/images/black.jpeg" alt="Trulli" style="width: 100%" height="333">
@@ -89,27 +49,27 @@
                     <tbody>
                     <tr>
                         <th scope="row" style="min-width:200px;">Vendor</th>
-                        <td>3COM</td>
+                        <td>{{$exam->vendor->name}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Certification</th>
-                        <td>CIPTS</td>               
+                        <td>{{$exam->certification->title}}</td>               
                     </tr>
                     <tr>
                         <th scope="row">Exam Code</th>
-                        <td>3M0-212</td>
+                        <td>{{$exam->exam_code}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Exam Title</th>
-                        <td>3Com Certified Enterprise LAN Specialist Final Exam v3.2</td>
+                        <td>{{$exam->exam_title}}</td>
                     </tr>
                     <tr>
                         <th scope="row">No. of Questions</th>
-                        <td>134</td>
+                        <td>{{$exam->total_questions}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Last Updated</th>
-                        <td>04/03/2019</td>
+                        <td>{{($exam->updated_at->format('j F, Y'))}}</td>
                     </tr>
                     <tr>
                         <th scope="row">Product Type</th>
@@ -133,7 +93,7 @@
                     </tr>
                     <tr>
                         <th scope="row">Price</th>
-                        <td>	$25 - Unlimited Access Immediate Access Included
+                        <td> $25 - Unlimited Access Immediate Access Included
                             3M0-212 Exam + Online Testing Engine + Offline Simulator + Android Testing Engine & 4500+ Other Exams<br><br>
                             <button type="button" class="btn btn-primary">Buy Now</button>
                         </td>
@@ -145,61 +105,19 @@
                 <div class="card-body">
                     <nav>
                         <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
-                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
-                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+                        <a class="nav-item nav-link active" id="nav-desc-tab" data-toggle="tab" href="#nav-desc" role="tab" aria-controls="nav-home" aria-selected="true">Descrption</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-features" role="tab" aria-controls="nav-profile" aria-selected="false">Features</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-extra" role="tab" aria-controls="nav-contact" aria-selected="false">Extra Features</a>
                         </div>
                     </nav>
                     <div class="tab-content" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">...</div>
-                        <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
-                        <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
+                        <div class="tab-pane fade show active" id="nav-desc" role="tabpanel" aria-labelledby="nav-desc-tab"><div class="card-body">{{$exam->description}}</div></div>
+                        <div class="tab-pane fade" id="nav-features" role="tabpanel" aria-labelledby="nav-features-tab"><div class="card-body">{{$exam->features}}</div></div>
+                        <div class="tab-pane fade" id="nav-extra" role="tabpanel" aria-labelledby="nav-extra-tab"><div class="card-body">
+                        {{$exam->extra_features}}
+                        </div></div>
                     </div>
                 </div>
             </div>
         </div>
-<style>
-  img {
-  float: left;
-    }
-    * {
-    box-sizing: border-box;
-    position: left;
-    }
-
-    #myInput {
-    background-image: url('/css/searchicon.png');
-    background-position: 5px 5px;
-    background-repeat: no-repeat;
-    width: 100%;
-    font-size: 16px;
-    padding: 12px 20px 12px 40px;
-    border: 1px solid #eef5f9 ;
-    margin-bottom: 12px;
-    }
-
-    #myTable {
-    border-collapse: collapse;
-    width: 100%;
-    border: 1px solid #eef5f9 ;
-    font-size: 18px;
-    }
-
-    #myTable th, #myTable td {
-    text-align: left;
-    padding: 12px;
-    }
-
-    #myTable tr {
-    border-bottom: 1px solid #eef5f9 ;
-    }
-
-    #myTable tr.header, #myTable tr:hover {
-    background-color: #eef5f9 ;
-    }
-
-    #myTable tr.footer, #myTable tr:hover {
-    background-color: #eef5f9 ;
-    }
-</style>
 @endsection

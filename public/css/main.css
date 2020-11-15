@@ -1,4 +1,7 @@
-
+html {
+    scroll-behavior: smooth;
+}
+body{font-size: 15px !important;}
 img{max-width: 100%;}
 .navbar-dark .navbar-nav .nav-link {
     color: #fff !important;
@@ -134,3 +137,51 @@ img{max-width: 100%;}
     margin-left: 15px;
     margin-bottom: 7px;
 }
+
+#myInput {
+    background-position: 5px 5px;
+    background-repeat: no-repeat;
+    width: 100%;
+    font-size: 16px;
+    padding: 12px 20px 12px 20px;
+    border: 1px solid #eef5f9 ;
+    margin-bottom: 12px;
+}
+  
+#myTable {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #eef5f9 ;
+    font-size: 18px;
+}
+
+  
+#myTable th, #myTable td {
+    text-align: left;
+    padding: 12px;
+}
+  
+#myTable tr {
+    border-bottom: 1px solid #eef5f9 ;
+}
+#myTable tr.header{
+    background-color: #164ea5 ;
+    color: #fff;
+}
+
+#myTable tr.footer{
+    background-color: #164ea5 ;
+    color: #fff;
+}
+#myTable tr.footer a{
+    color: #fff;
+}
+/* Header Search Styles */
+.search-input input{line-height: 50px; font-size: 20px; height: 50px;}
+.search-input .form-control:focus{ box-shadow: 0 0 black;border-color: #009a06;}
+
+/* Product Page Styles */
+.exam-title{padding: 10px; text-align: center; background-color: aliceblue; border: 1px solid #dee2e6; font-weight: 700; }
+#example thead{background-color: #024184;}
+#example thead th {vertical-align: bottom; border-bottom: 0;}
+#example thead td, #example thead th {border-bottom-width: 0;}

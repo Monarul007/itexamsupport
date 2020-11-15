@@ -47,7 +47,9 @@ class Exams extends Component
             'certification' => 'required',
             'code' => 'required',
             'attachment' => 'file|max:1024',
-            'questions' => 'required'
+            'questions' => 'required',
+            'features' => 'required',
+            'extra_features' => 'required',
         ]);
 
         if(empty($this->featured)){

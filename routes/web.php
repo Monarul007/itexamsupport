@@ -31,12 +31,13 @@ Route::match(['get','post'],'/post/{id}', 'PagesController@singlePost')->name('s
 Route::get('/products', 'PagesController@products')->name('all.products');
 Route::get('/certifications', 'PagesController@certification')->name('pages.certifications');
 Route::get('/exam/{id}', 'PagesController@exam')->name('pages.singleExam');
+Route::get('/vendors/{id}', 'PagesController@vendor')->name('pages.singleVendor');
 
 //Admin Panel Routes
 Route::group(['middleware' => ['auth']], function(){
     
     Route::match(['get','post'],'/admin', 'PagesController@adminIndex')->name('admin.index');
-    Route::match(['get','post'],'/admin/vendors', 'PagesController@vendors')->name('admin.all.vendors');
+    Route::match(['get','post'],'/admin/vendors', 'PagesController@allvendors')->name('admin.all.vendors');
     Route::match(['get','post'],'/admin/certifications', 'PagesController@certifications')->name('admin.all.certifications');
     Route::match(['get','post'],'/admin/exams', 'PagesController@exams')->name('admin.all.exams');
 

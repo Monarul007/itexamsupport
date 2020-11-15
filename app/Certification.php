@@ -12,4 +12,7 @@ class Certification extends Model
     {
         return $this->belongsTo(Vendor::class, 'vendor_id');
     }
+    public function exams(){
+        return $this->hasMany(Exam::class);
+    }
 }

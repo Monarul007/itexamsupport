@@ -26,7 +26,7 @@ class HomeController extends Controller
     {
         if(Auth::check()) {
             if(Auth::user()->user_type == '1'){
-                return view('admin');
+                return view('admin.index');
             }elseif(Auth::user()->type == '2'){
                 return redirect('myaccount');
             }else{
