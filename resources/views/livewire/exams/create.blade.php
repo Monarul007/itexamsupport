@@ -41,12 +41,8 @@
                     </div>
                     <div class="position-relative row form-group">
                         <div class="col-md-6 pr-1">
-                            <select id="type" class="form-control" wire:model="type">
-                                <option>Exam Type</option>
-                                <option value="0">Type 1</option>
-                                <option value="1">Type 2</option>
-                            </select>
-                            @error('type') <span class="text-danger">{{ $message }}</span>@enderror
+                            <input type="number" class="form-control" id="price" placeholder="Exam Price" wire:model="price">
+                            @error('price') <span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                         <div class="col-md-6 pl-1">
                             <select id="status" class="form-control" wire:model="status">
@@ -59,10 +55,10 @@
                     </div>
                     <div class="position-relative row form-group">
                         <div class="col-12">
-                            @if ($attachment)
+                            <!-- @if ($attachment)
                                 Attachement Preview:
                                 <img width="80px" style="border-radius: 100%;" src="{{ $attachment->temporaryUrl() }}">
-                            @endif
+                            @endif -->
                             <input wire:model="attachment" id="attachment" type="file" class="form-control-file">
                             <div wire:loading wire:target="attachment">Uploading...</div>
                             @error('attachment') <span class="text-danger">{{ $message }}</span>@enderror

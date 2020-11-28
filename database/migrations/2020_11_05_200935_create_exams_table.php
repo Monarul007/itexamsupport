@@ -22,11 +22,12 @@ class CreateExamsTable extends Migration
             $table->string('exam_title', 255);
             $table->string('exam_code', 255);
             $table->string('total_questions', 255);
-            $table->string('product_type', 255);
+            $table->string('product_type', 255)->nullable();
+            $table->decimal('price', 8, 2);
             $table->string('attachment', 255);
-            $table->string('features', 255);
-            $table->string('extra_features', 255);
-            $table->string('description', 255);
+            $table->longText('features')->nullable();
+            $table->longText('extra_features')->nullable();
+            $table->longText('description')->nullable();
             $table->tinyInteger('status');
             $table->tinyInteger('featured');
             $table->timestamps();

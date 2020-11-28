@@ -6,6 +6,7 @@ use App\Certification;
 use Illuminate\Http\Request;
 use App\Vendor;
 use App\Exam;
+use App\Product;
 
 class PagesController extends Controller
 {
@@ -26,8 +27,20 @@ class PagesController extends Controller
         return view('admin.index');
     }
 
+    public function categories(){
+        return view('admin.categories.categories');
+    }
+    public function allProducts(){
+        return view('admin.products.all-products');
+    }
+
     public function products(){
         return view('products');
+    }
+
+    public function singleProduct($id){
+        $details = Product::where('id',$id)->first();
+        return view('single-product')->with(compact('details'));
     }
 
     public function certification(){
@@ -54,5 +67,8 @@ class PagesController extends Controller
     }
     public function exams(){
         return view('admin.exams.all-exams');
+    }
+    public function vouchers(){
+        return view('admin.vouchers.all-vouchers');
     }
 }

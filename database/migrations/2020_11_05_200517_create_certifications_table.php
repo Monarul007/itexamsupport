@@ -18,7 +18,7 @@ class CreateCertificationsTable extends Migration
             $table->unsignedBigInteger('vendor_id');
             $table->foreign('vendor_id')->references('id')->on('vendors');
             $table->string('title', 255);
-            $table->string('description', 255);
+            $table->longText('description')->nullable();
             $table->tinyInteger('type');
             $table->tinyInteger('status');
             $table->timestamps();

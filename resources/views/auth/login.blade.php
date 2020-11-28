@@ -38,11 +38,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-5">
-            <div class="card" style="margin-top: 20vh;
-    -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
-    -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
-    box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);background-color: rgb(233 236 239 / 85%)">
-
+            <div class="card" style="margin-top: 20vh; -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75); -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75); box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);background-color: rgb(233 236 239 / 85%)">
                 <div class="card-body" style="margin: 1.25rem;">
                 <h3 style="margin-left: -1.25rem;">Login</h3>
                     <form method="POST" action="{{ route('login') }}">

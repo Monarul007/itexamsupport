@@ -13,7 +13,7 @@
                                 @endforeach
                             @else
                                 <tr>
-                                    <td class="text-danger">No certification found under thid vendor.</td>
+                                    <td class="text-danger">No certification found under this vendor.</td>
                                 </tr>
                             @endif
                         @endforeach

@@ -10,7 +10,7 @@
   <section id="e">
     <div class="container">
       <h3 class="text-center mt-5 mb-5">Our Top Certifications</h3>
-        <div class="owl-carousel">
+        <div id="def" class="owl-carousel">
             <div><img src="images/logos/aws-certified-cloud-practitioner.png" alt=""></div>
             <div><img src="images/logos/casp.png" alt=""></div>
             <div><img src="images/logos/microsoft-certified-azure-fundamentals.png" alt=""></div>
@@ -24,7 +24,7 @@
         </div>
     </div>
   </section>
-  <section class="mt-5">
+  <!-- <section class="mt-5">
       <div class="container my-5">
           <div class="row">
               <div class="col-12 col-sm-6 order-2 order-sm-1">
@@ -47,5 +47,5 @@
               
           </div>
       </div>
-  </section>
+  </section> -->
 @endsection

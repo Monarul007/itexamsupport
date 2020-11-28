@@ -178,10 +178,13 @@ img{max-width: 100%;}
 }
 /* Header Search Styles */
 .search-input input{line-height: 50px; font-size: 20px; height: 50px;}
-.search-input .form-control:focus{ box-shadow: 0 0 black;border-color: #009a06;}
+.form-control:focus{ box-shadow: 0 0 black !important;border-color: #009a06 !important;}
 
 /* Product Page Styles */
 .exam-title{padding: 10px; text-align: center; background-color: aliceblue; border: 1px solid #dee2e6; font-weight: 700; }
 #example thead{background-color: #024184;}
 #example thead th {vertical-align: bottom; border-bottom: 0;}
 #example thead td, #example thead th {border-bottom-width: 0;}
+.main-content .owl-carousel .owl-stage-outer{top: 25px;}
+.main-content .owl-carousel .owl-stage-outer .owl-stage .item a{color: #fff; font-weight: 900;}
+.product-details-price{font-size: 22px; font-weight: 700; color: #ca1515; margin-bottom: 30px;}
