@@ -62,5 +62,6 @@ Route::group(['middleware' => ['auth']], function(){
 
     //Payment Gateway Integration
     Route::post('/create-payment', 'PaymentController@create')->name('create-payment');
+    Route::match(['get','post'],'/success-payment', 'PaymentController@success')->name('success');
 
 });

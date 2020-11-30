@@ -16,7 +16,9 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.4",
         "livewire/livewire": "^2.3",
-        "mediconesystems/livewire-datatables": "^0.4.2"
+        "mediconesystems/livewire-datatables": "^0.4.2",
+        "orchestra/parser": "5",
+        "smasif/shurjopay-laravel-package": "^1.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",

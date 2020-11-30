@@ -44,6 +44,7 @@
                         <div class="col-12 d-flex justify-content-center m-auto">
                             <form action="{{ route('create-payment') }}" method="post">
                                 @csrf
+                                <input type="hidden" name="order_id" value="<?= $orderno ?>">
                                 <input type="submit" class="btn btn-info" value="Pay Now">
                             </form>
                             <button class="btn btn-danger ml-2"><?= $status; ?></button>
