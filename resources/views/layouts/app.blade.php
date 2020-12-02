@@ -129,8 +129,16 @@
         }
     </style>
     @livewireStyles
+    <!-- 1. Addchat css -->
+    <link href="{{ asset('assets/addchat/css/addchat.min.css') }}" rel="stylesheet">
 </head>
 <body>
+    <!-- 2. AddChat widget -->
+    <div id="addchat_app" 
+        data-baseurl="{{ url('') }}"
+        data-csrfname="{{ 'X-CSRF-Token' }}"
+        data-csrftoken="{{ csrf_token() }}"
+    ></div>
     <section class="pt-3" id="with-search">
         <div class="container">
             <div class="row">
@@ -319,6 +327,9 @@
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
+    <script type="module" src="{{ asset('assets/addchat/js/addchat.min.js') }}"></script>
+    <!-- Fallback support for Older browsers -->
+    <script nomodule src="{{ asset('assets/addchat/js/addchat-legacy.min.js') }}"></script>
     <script>
         $(document).ready(function(){
             $('#def').owlCarousel({
@@ -359,6 +370,8 @@
             });
         });
     </script>
+    <!-- 3. AddChat JS -->
+    <!-- Modern browsers -->
     @livewireScripts
 </body>
 </html>
